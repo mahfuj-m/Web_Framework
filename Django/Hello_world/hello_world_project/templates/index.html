@@ -1,0 +1,47 @@
+
+{% extends 'base.html' %}
+{% block body %}
+<p>This is Mahfujur Rahman</p>
+        <div>
+            <p>Name:{{Name}}</p>
+            <p>Country: {{Country}}</p>
+            <p>
+                {% for num in list %}
+                {% if num <= 3%}
+                <h{{num}}>Life is cool</h{{num}}>
+                {%else%}
+                <h{{num}}>Life is  booring</h{{num}}>
+                {%endif%}
+
+                {%endfor%}
+            </p>
+        </div>
+{% endblock %}
+
+<!--DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <nav>
+            <a href="/">Home</a> | <a href="{% url 'about'%}">About</a>
+        </nav>
+        <h1>this is my simple webpage</h1>
+        <p>This is Mahfujur Rahman</p>
+        <div>
+            <p>Name:{{Name}}</p>
+            <p>Country: {{Country}}</p>
+            <p>
+                {% for num in list %}
+                {% if num <= 3%}
+                <h{{num}}>Life is cool</h{{num}}>
+                {%else%}
+                <h{{num}}>Life is  booring</h{{num}}>
+                {%endif%}
+
+                {%endfor%}
+            </p>
+        </div>
+    </body>
+</html-->
