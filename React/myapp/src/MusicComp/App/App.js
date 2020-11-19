@@ -1,16 +1,27 @@
 import React from 'react';
 import './App.css';
-import {ClassComp, ClassComp1 } from './Components/ClassComp';
+// Change the path 
+/*import {ClassComp, ClassComp1 } from './Components/ClassComp';
 import Click from './Components/Click';
 import Counter from './Components/Counter';
 import FC  from './Components/FunctionalComp';
 import ParentComp from './Components/ParentComp';
 import ClassProps from './ComponentsProps/ClassProps';
 import FunctionalProps from './ComponentsProps/FunctionalProps';
-import NewComp from './StateComponents/NewComp';
+import NewComp from './StateComponents/NewComp';*/
 // Components are imported automatically
 class App extends React.Component {
-  styles={
+
+
+  render(){
+    return(
+      <div>
+        <h4>Hello Work is done</h4>
+      </div>
+    );
+
+  }
+  /*styles={
     fontStyle:'bold',
     color:'teal'
   };
@@ -34,7 +45,7 @@ class App extends React.Component {
 </div>
 
   );
-  }
+  }*/
 
     
 
