@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './MusicComp/App/App';
+import App from './Verification/App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
