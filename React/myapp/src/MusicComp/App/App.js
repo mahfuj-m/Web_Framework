@@ -14,7 +14,7 @@ import NewComp from './StateComponents/NewComp';*/
 import Playlist from "../Playlist/Playlist";
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
-import Spotify from "../uitl/Spotify";
+// import Spotify from "../util/Spotify";
 
 class App extends React.Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class App extends React.Component {
        playlistName:"New Playlist",
        playlistTracks:[]
     };
-    this.search=this.search.bind(this);
+    //this.search=this.search.bind(this);
     this.addTrack=this.addTrack.bind(this);
     this.removeTrack=this.removeTrack.bind(this);
     this.updatePlaylistName=this.updatePlaylistName.bind(this);
@@ -33,11 +33,11 @@ class App extends React.Component {
     this.removeTrackSearch=this.removeTrackSearch.bind(this);
     this.doThese=this.doThese.bind(this);
   }
-  search(term){
+  /*search(term){
     Spotify.search(term).then(SearchResults=>{
       this.setState({SearchResults:SearchResults});
     });
-  }
+  }*/
   addTrack(track){
     let tracks=this.state.playlistTracks;
     if(tracks.find(savedTrack=> savedTrack.id === track.id)){
@@ -70,26 +70,40 @@ class App extends React.Component {
 
   }
   savePlaylist(){
-    const trackUris=this.state.playlistTracks.map(track=> track.uri);
-    Spotify.savePlaylist(this.state.playlistName,trackUris).then(()=>{
+    //const trackUris=this.state.playlistTracks.map(track=> track.uri);
+   /* Spotify.savePlaylist(this.state.playlistName,trackUris).then(()=>{
       this.setState({
         updatePlaylistName:"New Playlist",
         playlistTracks:[]
       });
-    });
+    });*/
   }
 
   
 
 
-  /*render(){
+  render(){
     return(
       <div>
-        <h4>Hello Work is done</h4>
+        <h1>
+          <a href="http://localhost:3000">MusicoPhile</a>
+        </h1>
+        <div className="App">
+          <SearchBar onSearch={this.search}/>
+          <div className="App-playlist">
+            <SearchResults SearchResults={this.state.SearchResults} onAdd={this.doThese}/>
+            <Playlist playlistTracks={this.state.playlistTracks} onNameChange={this.updatePlaylistName}
+             onRemove={this.removeTrack} onSave={this.savePlaylist}/>
+  
+          </div>
+
+  
+  
+        </div>
       </div>
     );
 
-  }*/
+  }
   /*styles={
     fontStyle:'bold',
     color:'teal'
@@ -121,7 +135,7 @@ class App extends React.Component {
 }
 
 //Functional Method
-function App(){
+/*function App(){
 
   return(
     <div>
@@ -140,8 +154,8 @@ function App(){
 
       </div>
     </div>
-  )
-}
+  );
+}*/
 
 // defoult export will help to rename the file while importing
 
